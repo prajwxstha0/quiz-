@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Quiz</title>
+    <link rel="stylesheet" href="create_quiz.css">
+</head>
+<body>
+    <h2>Create a New Quiz</h2>
+    <form action="create_quiz.php" method="POST">
+        <label for="title">Quiz Title:</label>
+        <input type="text" name="title" required>
+
+        <label for="description">Quiz Description:</label>
+        <textarea name="description" required></textarea>
+
+        <h3>Questions:</h3>
+        <div id="questions">
+            <!-- Question fields will be appended here by JavaScript -->
+        </div>
+
+        <button type="button" onclick="addQuestion()">Add Question</button>
+        <button type="submit">Create Quiz</button>
+    </form>
+
+    <form action="submit_score.php" method="POST">
+        <input type="hidden" name="quiz_id" value="<?php echo $quiz_id; ?>"> <!-- Pass the quiz ID dynamically -->
+
+        <!-- Example question with options -->
+        <label>Question 1:</label>
+        <input type="radio" name="answers[1]" value="1"> Option 1<br>
+        <input type="radio" name="answers[1]" value="2"> Option 2<br>
+        <input type="radio" name="answers[1]" value="3"> Option 3<br>
+        <input type="radio" name="answers[1]" value="4"> Option 4<br>
+
+        <!-- Repeat for each question in the quiz -->
+        <button type="submit">Submit Quiz</button>
+    </form>
+
+
+    <script>
+        let questionCount = 0;
+
+        function addQuestion() {
+            questionCount++;
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            questionDiv.innerHTML = `
+                <h4>Question ${questionCount}</h4>
+                <label>Question Text:</label>
+                <input type="text" name="questions[${questionCount}][text]" required><br>
+                <label>Option 1:</label>
+                <input type="text" name="questions[${questionCount}][option1]" required><br>
+                <label>Option 2:</label>
+                <input type="text" name="questions[${questionCount}][option2]" required><br>
+                <label>Option 3:</label>
+                <input type="text" name="questions[${questionCount}][option3]" required><br>
+                <label>Option 4:</label>
+                <input type="text" name="questions[${questionCount}][option4]" required><br>
+                <label>Correct Option:</label>
+                <select name="questions[${questionCount}][correct]" required>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="4">Option 4</option>
+                </select>
+            `;
+            document.getElementById('questions').appendChild(questionDiv);
+        }
+    </script>
+</body>
+</html>

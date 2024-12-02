@@ -1,0 +1,83 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #f4f4f9;
+}
+
+/* Fixed Header for Timer */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    z-index: 1000;
+}
+
+/* Padding to prevent overlap with header */
+form {
+    padding-top: 70px; /* Add padding equal to header height */
+}
+
+/* Form styling */
+form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Question block styling */
+.question-block {
+    background-color: #f9f9ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Option label styling */
+.option-label {
+    display: block;
+    padding: 0.5rem;
+    margin: 0.3rem 0;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option-label:hover {
+    background-color: #e0e0e0;
+}
+
+/* Submit button styling */
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,71 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body background */
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Main container */
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Page heading */
+.container h1 {
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 1.5rem;
+}
+
+/* Form labels and input fields */
+form label {
+    display: block;
+    text-align: left;
+    margin: 1rem 0 0.5rem;
+    color: #555555;
+    font-weight: bold;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333333;
+    margin-bottom: 1.5rem;
+}
+
+/* Submit button styling */
+form button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #45a049;
+}
